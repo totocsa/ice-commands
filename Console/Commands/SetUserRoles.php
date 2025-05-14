@@ -6,9 +6,6 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 
-use function Laravel\Prompts\password;
-use function Laravel\Prompts\text;
-
 class SetUserRoles extends Command
 {
     protected $signature = 'ice:set-user-roles'
@@ -59,7 +56,6 @@ class SetUserRoles extends Command
 
     protected function validate()
     {
-        $a = $this->option('roles');
         $attributes = [
             'email' => $this->email,
             'roles' => $this->roles,

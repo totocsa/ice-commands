@@ -16,10 +16,11 @@ class IceCommandsServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \Totocsa\IceCommands\Console\Commands\DirPerms::class,
-                \Totocsa\IceCommands\Console\Commands\SetEnv::class,
-                \Totocsa\IceCommands\Console\Commands\Install::class,
                 \Totocsa\IceCommands\Console\Commands\CreateUser::class,
+                \Totocsa\IceCommands\Console\Commands\DirPerms::class,
+                \Totocsa\IceCommands\Console\Commands\Install::class,
+                \Totocsa\IceCommands\Console\Commands\SendEmail::class,
+                \Totocsa\IceCommands\Console\Commands\SetEnv::class,
                 \Totocsa\IceCommands\Console\Commands\SetUserRoles::class,
             ]);
         }
