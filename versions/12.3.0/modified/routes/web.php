@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Totocsa\UsersGUI\Http\Controllers\UserController;
+use Totocsa\DatabaseTranslationLocally\Http\Controllers\LocalesController;
 use Totocsa\TranslationsGUI\Http\Controllers\TranslationsController;
 use Totocsa\DatabaseTranslationLocally\Http\Middleware\SetLocale;
 use Totocsa\DatabaseTranslationLocally\Http\Middleware\LoadTranslations;
@@ -47,6 +48,8 @@ Route::group([
         Route::middleware(['auth', 'administrator'])->group(function () {
             Route::post('users/saveEditable', [UserController::class, 'saveEditable'])->name('users.saveEditable');
             Route::resource('users', UserController::class);
+
+            Route::resource('locales', LocalesController::class);
         });
 
         Route::middleware(['auth', 'administratorOrTranslator'])->group(function () {

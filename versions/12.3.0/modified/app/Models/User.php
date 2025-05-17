@@ -85,7 +85,7 @@ class User extends Authenticatable
         $id = key_exists('id', $attributes) ? $attributes['id'] : null;
 
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'min:1', 'max:255'],
             'email' => [
                 'required',
                 'email',
