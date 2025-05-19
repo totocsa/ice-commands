@@ -1,6 +1,7 @@
-import { defineConfig, loadEnv } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import vue from '@vitejs/plugin-vue';
+import { defineConfig, loadEnv } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import laravel from 'laravel-vite-plugin'
+import path from 'path'
 
 export default defineConfig(({ mode }) => {
 
@@ -36,5 +37,12 @@ export default defineConfig(({ mode }) => {
                 },
             }),
         ],
+        resolve: {
+            alias: {
+                '@': path.resolve(__dirname, 'resources/js'),
+                '@IceIcseusd': path.resolve(__dirname, 'vendor/totocsa/ice-icseusd/resources/js'),
+                '@IceUsersGui': path.resolve(__dirname, '/vendor/totocsa/ice-users-gui/resources/js'),
+            },
+        },
     }
 })
