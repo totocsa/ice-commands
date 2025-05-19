@@ -139,7 +139,7 @@ trait Install
             'info' => 'Install users GUI.',
             'commands' => [
                 ['composer', 'require', 'totocsa/ice-users-gui'],
-                ['php', 'artisan', 'vendor:publish', '--tag=ice-users-gui'],
+                ['php', 'artisan', 'vendor:publish', '--tag=ice-users-gui-migrations'],
             ],
         ],
         [
