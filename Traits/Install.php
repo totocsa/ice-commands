@@ -125,7 +125,7 @@ trait Install
             'info' => 'Install icseusd.',
             'commands' => [
                 ['composer', 'require', 'totocsa/ice-icseusd'],
-                ['php', 'artisan', 'vendor:publish', '--tag=ice-icseusd'],
+                //['php', 'artisan', 'vendor:publish', '--tag=ice-icseusd-resources'],
             ],
         ],
         [
