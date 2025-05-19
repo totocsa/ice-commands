@@ -46,17 +46,18 @@ class AppServiceProvider extends ServiceProvider
 
     protected function setSupportedLocales()
     {
-        $enableds = Locale::where('enabled', true)->orderBy('name')->get();
-        if ($enableds->count() < 1) {
-            Locale::where('configname', env('APP_LOCALE', 'en'))->update(['enabled' => true]);
+        try {
             $enableds = Locale::where('enabled', true)->orderBy('name')->get();
+            if ($enableds->count() < 1) {
+                Locale::where('configname', env('APP_LOCALE', 'en'))->update(['enabled' => true]);
+                $enableds = Locale::where('enabled', true)->orderBy('name')->get();
 
-            if (count($enableds) < 1) {
-                $configname = env('APP_LOCALE', 'en');
-                $m = new Locale($this->localeItems[$configname]);
-                $m->configname = $configname;
-                $enableds[] =  $m;
+                if (count($enableds) < 1) {
+                    $enableds[] =  $this->forceSupportedLocales();
+                }
             }
+        } catch (\Throwable $th) {
+            $enableds[] =  $this->forceSupportedLocales();
         }
 
         $supportedLocales = [];
@@ -66,5 +67,14 @@ class AppServiceProvider extends ServiceProvider
         }
 
         Config::set('laravellocalization.supportedLocales', $supportedLocales);
+    }
+
+    protected function forceSupportedLocales()
+    {
+        $configname = env('APP_LOCALE', 'en');
+        $m = new Locale($this->localeItems[$configname]);
+        $m->configname = $configname;
+
+        return $m;
     }
 }
