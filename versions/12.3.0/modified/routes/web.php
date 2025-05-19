@@ -28,7 +28,7 @@ Route::group([
             'laravelVersion' => Application::VERSION,
             'phpVersion' => PHP_VERSION,
         ]);
-    })->name('/');
+    })->name('appRoot');
 
     require_once __DIR__ . '/fortify.php';
 
