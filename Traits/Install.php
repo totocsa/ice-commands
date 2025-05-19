@@ -4,7 +4,7 @@ namespace Totocsa\IceCommands\Traits;
 
 trait Install
 {
-    protected $commands = [
+    protected $installCommands = [
         [
             'info' => 'Set directories permissions.',
             'commands' => [
@@ -174,6 +174,9 @@ trait Install
                 ['composer', 'require', 'totocsa/laravel-has-labels'],
             ],
         ],
+    ];
+
+    protected $lastCommands = [
         [
             'info' => 'Last commands.',
             'commands' => [

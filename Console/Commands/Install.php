@@ -27,14 +27,19 @@ class Install extends Command
         file_put_contents('storage' . DIRECTORY_SEPARATOR . 'logs' . DIRECTORY_SEPARATOR . 'laravel.log', '');
         chmod('storage' . DIRECTORY_SEPARATOR . 'logs' . DIRECTORY_SEPARATOR . 'laravel.log', 0666);
 
-        $successRunCommands = $this->runCommands();
+        $successRunInstallCommands = $this->runCommands($this->installCommands);
 
-        if ($successRunCommands) {
+        if ($successRunInstallCommands) {
             if ($this->reConfig()) {
-                $this->newLine();
-                $this->info("The installation was successful.");
+                $successRunLastCommands = $this->runCommands($this->lastCommands);
+                if ($successRunLastCommands) {
+                    $this->newLine();
+                    $this->info("The installation was successful.");
 
-                return Command::SUCCESS;
+                    return Command::SUCCESS;
+                } else {
+                    return $this->unsuccessful();
+                }
             } else {
                 return $this->unsuccessful();
             }
@@ -43,10 +48,10 @@ class Install extends Command
         }
     }
 
-    protected function runCommands()
+    protected function runCommands($commands)
     {
         $success = true;
-        foreach ($this->commands as $v) {
+        foreach ($commands as $v) {
             $this->newLine();
             $this->info("{$v['info']}");
 
@@ -114,5 +119,12 @@ class Install extends Command
 
             return proc_close($process);
         }
+    }
+
+    protected function unsuccessful()
+    {
+        $this->newLine();
+        $this->error("The installation was unsuccessful.");
+        return Command::FAILURE;
     }
 }
