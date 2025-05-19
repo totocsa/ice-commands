@@ -6,10 +6,14 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
 use Spatie\Permission\Models\Role;
+use Totocsa\DatabaseTranslationLocally\database\Traits\InsertsIntoLocales;
 use Totocsa\DatabaseTranslationLocally\Models\Locale;
 
 class AppServiceProvider extends ServiceProvider
 {
+
+    use InsertsIntoLocales;
+
     /**
      * Register any application services.
      */
@@ -44,8 +48,15 @@ class AppServiceProvider extends ServiceProvider
     {
         $enableds = Locale::where('enabled', true)->orderBy('name')->get();
         if ($enableds->count() < 1) {
-            Locale::where('configname', 'en')->update(['enabled' => true]);
+            Locale::where('configname', env('APP_LOCALE', 'en'))->update(['enabled' => true]);
             $enableds = Locale::where('enabled', true)->orderBy('name')->get();
+
+            if (count($enableds) < 1) {
+                $configname = env('APP_LOCALE', 'en');
+                $m = new Locale($this->localeItems[$configname]);
+                $m->configname = $configname;
+                $enableds[] =  $m;
+            }
         }
 
         $supportedLocales = [];
