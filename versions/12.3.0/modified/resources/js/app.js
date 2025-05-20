@@ -23,6 +23,19 @@ const nameResolve = name => {
 
     if (res === undefined) {
         let path = nameToPath(name)
+        console.log('PATH: ', path)
+        if (path === '/vendor/totocsa/ice-database-translation-locally/resources/js/') {
+            const users = import.meta.glob('/vendor/totocsa/ice-database-translation-locally/resources/js/**/*.vue', { eager: true })
+            const index = name.substring(name.indexOf("/vendor/")) + '.vue'
+            res = users[index]
+        }
+
+        if (path === '/vendor/totocsa/ice-icseusd/resources/js/') {
+            const users = import.meta.glob('/vendor/totocsa/ice-icseusd/resources/js/**/*.vue', { eager: true })
+            const index = name.substring(name.indexOf("/vendor/")) + '.vue'
+            res = users[index]
+        }
+
         if (path === '/vendor/totocsa/ice-users-gui/resources/js/') {
             const users = import.meta.glob('/vendor/totocsa/ice-users-gui/resources/js/**/*.vue', { eager: true })
             const index = name.substring(name.indexOf("/vendor/")) + '.vue'
@@ -30,8 +43,12 @@ const nameResolve = name => {
         }
     }
 
+    console.log('NAME: ', name)
+    console.log('RES: ', res)
     return res
 }
+
+
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

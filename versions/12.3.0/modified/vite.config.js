@@ -40,6 +40,7 @@ export default defineConfig(({ mode }) => {
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, 'resources/js'),
+                '@IceDatabaseTranslationLocally': path.resolve(__dirname, '/vendor/totocsa/ice-database-translation-locally/resources/js'),
                 '@IceIcseusd': path.resolve(__dirname, 'vendor/totocsa/ice-icseusd/resources/js'),
                 '@IceUsersGui': path.resolve(__dirname, '/vendor/totocsa/ice-users-gui/resources/js'),
             },

@@ -118,7 +118,8 @@ trait Install
             'info' => 'Install database translation locally.',
             'commands' => [
                 ['composer', 'require', 'totocsa/ice-database-translation-locally'],
-                ['php', 'artisan', 'vendor:publish', '--tag=ice-database-translation-locally', '--force'],
+                ['php', 'artisan', 'vendor:publish', '--tag=ice-database-translation-locally-migrations'],
+                //['php', 'artisan', 'vendor:publish', '--tag=ice-database-translation-locally-resources', '--force'],
             ],
         ],
         [
