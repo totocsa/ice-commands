@@ -111,7 +111,7 @@ trait Install
             'info' => 'Install modal li fo.',
             'commands' => [
                 ['composer', 'require', 'totocsa/ice-modal-li-fo'],
-                ['php', 'artisan', 'vendor:publish', '--tag=ice-modal-li-fo'],
+                //['php', 'artisan', 'vendor:publish', '--tag=ice-modal-li-fo'],
             ],
         ],
         [
