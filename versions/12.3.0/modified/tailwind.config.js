@@ -14,8 +14,11 @@ export default {
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.vue",
         "./vendor/totocsa/laravel-tailwindcss-helper/TailwindcssHelper.php",
+        "./vendor/totocsa/ice-authorization-gui/resources/js/**/*.vue",
         "./vendor/totocsa/ice-database-translation-locally/resources/js/**/*.vue",
         "./vendor/totocsa/ice-icseusd/resources/js/**/*.vue",
+        "./vendor/totocsa/ice-modal-li-fo/resources/js/**/*.vue",
+        "./vendor/totocsa/ice-translations-gui/resources/js/**/*.vue",
         "./vendor/totocsa/ice-users-gui/resources/js/**/*.vue",
     ],
     theme: {

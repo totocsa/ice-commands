@@ -133,7 +133,7 @@ trait Install
             'info' => 'Install translations GUI.',
             'commands' => [
                 ['composer', 'require', 'totocsa/ice-translations-gui'],
-                ['php', 'artisan', 'vendor:publish', '--tag=ice-translations-gui'],
+                //['php', 'artisan', 'vendor:publish', '--tag=ice-translations-gui-resources'],
             ],
         ],
         [
@@ -147,7 +147,7 @@ trait Install
             'info' => 'Install authorization GUI.',
             'commands' => [
                 ['composer', 'require', 'totocsa/ice-authorization-gui'],
-                ['php', 'artisan', 'vendor:publish', '--tag=ice-authorization-gui'],
+                ['php', 'artisan', 'vendor:publish', '--tag=ice-authorization-gui-migrations'],
             ],
         ],
         [

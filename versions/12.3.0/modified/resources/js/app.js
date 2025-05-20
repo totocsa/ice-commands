@@ -24,6 +24,12 @@ const nameResolve = name => {
     if (res === undefined) {
         let path = nameToPath(name)
         console.log('PATH: ', path)
+        if (path === '/vendor/totocsa/ice-authorization-gui/resources/js/') {
+            const users = import.meta.glob('/vendor/totocsa/ice-authorization-gui/resources/js/**/*.vue', { eager: true })
+            const index = name.substring(name.indexOf("/vendor/")) + '.vue'
+            res = users[index]
+        }
+
         if (path === '/vendor/totocsa/ice-database-translation-locally/resources/js/') {
             const users = import.meta.glob('/vendor/totocsa/ice-database-translation-locally/resources/js/**/*.vue', { eager: true })
             const index = name.substring(name.indexOf("/vendor/")) + '.vue'
@@ -32,6 +38,18 @@ const nameResolve = name => {
 
         if (path === '/vendor/totocsa/ice-icseusd/resources/js/') {
             const users = import.meta.glob('/vendor/totocsa/ice-icseusd/resources/js/**/*.vue', { eager: true })
+            const index = name.substring(name.indexOf("/vendor/")) + '.vue'
+            res = users[index]
+        }
+
+        if (path === '/vendor/totocsa/ice-modal-li-fo/resources/js/') {
+            const users = import.meta.glob('/vendor/totocsa/ice-modal-li-fo/resources/js/**/*.vue', { eager: true })
+            const index = name.substring(name.indexOf("/vendor/")) + '.vue'
+            res = users[index]
+        }
+
+        if (path === '/vendor/totocsa/ice-translations-gui/resources/js/') {
+            const users = import.meta.glob('/vendor/totocsa/ice-translations-gui/resources/js/**/*.vue', { eager: true })
             const index = name.substring(name.indexOf("/vendor/")) + '.vue'
             res = users[index]
         }
