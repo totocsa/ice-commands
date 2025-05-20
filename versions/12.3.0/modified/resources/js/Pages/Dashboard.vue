@@ -2,8 +2,8 @@
 import { Link } from '@inertiajs/vue3';
 import IceLayout from '@IceDatabaseTranslationLocally/Layouts/IceLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
-import ControllerMenu from "@IceIcseusd/Components/totocsa/Icseusd/ControllerMenu.vue"
-import LocalTranslation from '@IceDatabaseTranslationLocally/Components/totocsa/LocalTranslation/LocalTranslation.vue';
+import ControllerMenu from "@IceIcseusd/Components/Icseusd/ControllerMenu.vue"
+import LocalTranslation from '@IceDatabaseTranslationLocally/Components/LocalTranslation/LocalTranslation.vue';
 
 const props = defineProps({
     userRoles: Object,

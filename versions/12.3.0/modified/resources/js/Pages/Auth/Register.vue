@@ -1,14 +1,14 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import IceLayout from '@IceDatabaseTranslationLocally/Layouts/IceLayout.vue'
-import ControllerMenu from "@IceIcseusd/Components/totocsa/Icseusd/ControllerMenu.vue"
+import ControllerMenu from "@IceIcseusd/Components/Icseusd/ControllerMenu.vue"
 import AuthenticationCard from '@/Components/AuthenticationCard.vue';
 import Checkbox from '@/Components/Checkbox.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import LocalTranslation from '@IceDatabaseTranslationLocally/Components/totocsa/LocalTranslation/LocalTranslation.vue';
+import LocalTranslation from '@IceDatabaseTranslationLocally/Components/LocalTranslation/LocalTranslation.vue';
 
 const props = defineProps({
     userRoles: Object,

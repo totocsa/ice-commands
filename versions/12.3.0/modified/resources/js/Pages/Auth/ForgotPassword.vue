@@ -6,7 +6,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import LocalTranslationHeader from '@IceDatabaseTranslationLocally/Components/totocsa/LocalTranslation/LocalTranslationHeader.vue'
+import LocalTranslationHeader from '@IceDatabaseTranslationLocally/Components/LocalTranslation/LocalTranslationHeader.vue'
 
 defineProps({
     status: String,

@@ -80,20 +80,20 @@ trait Install
                 ['git', 'clone', 'https://github.com/bealejd/blog-async-icons.git', 'resources' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'Components' . DIRECTORY_SEPARATOR . 'bealejd' . DIRECTORY_SEPARATOR . 'blog-async-icons'],
             ],
         ],
-        [
+        /*[
             'info' => 'Install button animate.',
             'commands' => [
                 ['composer', 'require', 'totocsa/laravel-animate-success-form'],
                 //['php', 'artisan', 'vendor:publish', '--tag=laravel-animate-success-form'],
             ],
-        ],
-        [
+        ],*/
+        /*[
             'info' => 'Install axios interceptors.',
             'commands' => [
                 ['composer', 'require', 'totocsa/laravel-axios-interceptors'],
                 //['php', 'artisan', 'vendor:publish', '--tag=laravel-axios-interceptors'],
             ],
-        ],
+        ],*/
         [
             'info' => 'Install unique multiple validator.',
             'commands' => [

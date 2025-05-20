@@ -1,14 +1,14 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import IceLayout from '@IceDatabaseTranslationLocally/Layouts/IceLayout.vue'
-import ControllerMenu from '@IceIcseusd/Components/totocsa/Icseusd/ControllerMenu.vue'
+import ControllerMenu from '@IceIcseusd/Components/Icseusd/ControllerMenu.vue'
 import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue'
 import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue'
 import SectionBorder from '@/Components/SectionBorder.vue'
 import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue'
 import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue'
 import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue'
-import LocalTranslation from '@IceDatabaseTranslationLocally/Components/totocsa/LocalTranslation/LocalTranslation.vue'
+import LocalTranslation from '@IceDatabaseTranslationLocally/Components/LocalTranslation/LocalTranslation.vue'
 
 defineProps({
     confirmsTwoFactorAuthentication: Boolean,
