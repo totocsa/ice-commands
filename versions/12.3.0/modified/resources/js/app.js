@@ -1,6 +1,6 @@
 import "./bootstrap"
 import "../css/app.css"
-import "../../vendor/totocsa/ice-icseusd/resources/js/Components/totocsa/Icseusd/js/axiosInterceptors.js"
+import "../../vendor/totocsa/ice-icseusd/resources/js/Components/Icseusd/js/axiosInterceptors.js"
 import { createApp, h } from "vue"
 import { createPinia } from "pinia"
 import { createInertiaApp } from "@inertiajs/vue3"
