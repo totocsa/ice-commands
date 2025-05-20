@@ -5,7 +5,7 @@ import typography from "@tailwindcss/typography"
 /** @type {import('tailwindcss').Config} */
 export default {
     presets: [
-        require("./resources/js/Components/totocsa/animate-success-form.js"),
+        require("./vendor/totocsa/ice-icseusd/resources/js/Components/totocsa/Icseusd/js/animate-success-form.js"),
     ],
     content: [
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
