@@ -84,14 +84,14 @@ trait Install
             'info' => 'Install button animate.',
             'commands' => [
                 ['composer', 'require', 'totocsa/laravel-animate-success-form'],
-                ['php', 'artisan', 'vendor:publish', '--tag=laravel-animate-success-form'],
+                //['php', 'artisan', 'vendor:publish', '--tag=laravel-animate-success-form'],
             ],
         ],
         [
             'info' => 'Install axios interceptors.',
             'commands' => [
                 ['composer', 'require', 'totocsa/laravel-axios-interceptors'],
-                ['php', 'artisan', 'vendor:publish', '--tag=laravel-axios-interceptors'],
+                //['php', 'artisan', 'vendor:publish', '--tag=laravel-axios-interceptors'],
             ],
         ],
         [
