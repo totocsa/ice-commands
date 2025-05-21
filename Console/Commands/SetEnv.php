@@ -42,7 +42,7 @@ class SetEnv extends Command
             $content = file_get_contents(base_path('.env'));
 
             $newContent = strtr(preg_replace($patterns, $replacements, $content), $trFromTo);
-            file_put_contents('.env.0', $newContent);
+
             copy('.env', '.env.' . str_replace('.', '', microtime(true)));
             file_put_contents('.env', $newContent);
         } else {
