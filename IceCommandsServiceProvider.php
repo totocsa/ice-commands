@@ -2,7 +2,10 @@
 
 namespace Totocsa\IceCommands;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
+use Totocsa\MigrationHelper\MigrationHelper;
+
 
 class IceCommandsServiceProvider extends ServiceProvider
 {
@@ -24,5 +27,11 @@ class IceCommandsServiceProvider extends ServiceProvider
                 \Totocsa\IceCommands\Console\Commands\SetUserRoles::class,
             ]);
         }
+
+        $groupsBase = 'ice-commands';
+        $groups = "$groupsBase-migrations";
+
+        $paths = MigrationHelper::stubsToMigrations($groups, __DIR__ . '/database/migrations/');
+        $this->publishes($paths, $groups);
     }
 }

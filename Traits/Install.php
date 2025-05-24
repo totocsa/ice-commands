@@ -183,6 +183,7 @@ trait Install
             'commands' => [
                 ['npm', 'install'],
                 ['npm', 'run', 'build'],
+                ['php', 'artisan', 'vendor:publish', '--tag=ice-commands-migrations'],
                 ['php', 'artisan', 'optimize:clear'],
                 ['php', 'artisan', 'migrate'],
             ],

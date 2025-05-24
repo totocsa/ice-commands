@@ -1,0 +1,25 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Totocsa\MigrationHelper\MigrationHelper;
+
+return new class extends Migration
+{
+    const tableName = 'personal_access_tokens';
+
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        MigrationHelper::upDefaultCreatedUpdated($this::tableName);
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        MigrationHelper::downDefaultCreatedUpdated($this::tableName);
+    }
+};

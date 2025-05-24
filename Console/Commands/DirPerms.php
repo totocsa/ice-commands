@@ -8,9 +8,9 @@ use RecursiveIteratorIterator;
 
 class DirPerms extends Command
 {
-    protected $signature = 'ice:dir-perms
-                            {--dir= : The directory to apply permissions to (required)}
-                            {--mode=0777 : The permission mode (octal)}';
+    protected $signature = 'ice:dir-perms'
+        . ' {--dir= : The directory to apply permissions to (required)}'
+        . ' {--mode=0777 : The permission mode (octal)}';
 
     protected $description = 'Recursively set directory permissions';
 
