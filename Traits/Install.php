@@ -75,6 +75,13 @@ trait Install
             ],
         ],
         [
+            'info' => 'Install migration helper.',
+            'commands' => [
+                ['composer', 'require', 'totocsa/laravel-migration-helper'],
+                ['php', 'artisan', 'vendor:publish', '--tag=laravel-migration-helper-migrations'],
+            ],
+        ],
+        [
             'info' => 'Install IconAsync Vue component.',
             'commands' => [
                 ['git', 'clone', 'https://github.com/bealejd/blog-async-icons.git', 'resources' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'Components' . DIRECTORY_SEPARATOR . 'bealejd' . DIRECTORY_SEPARATOR . 'blog-async-icons'],
@@ -98,13 +105,6 @@ trait Install
             'info' => 'Install unique multiple validator.',
             'commands' => [
                 ['composer', 'require', 'totocsa/laravel-unique-multiple'],
-            ],
-        ],
-        [
-            'info' => 'Install migration helper.',
-            'commands' => [
-                ['composer', 'require', 'totocsa/laravel-migration-helper'],
-                ['php', 'artisan', 'vendor:publish', '--tag=laravel-migration-helper-migrations'],
             ],
         ],
         [
