@@ -74,13 +74,13 @@ trait Install
                 ['npm', 'install', '-D', 'focus-trap-vue'],
             ],
         ],
-        [
+        /*[
             'info' => 'Install migration helper.',
             'commands' => [
                 ['composer', 'require', 'totocsa/laravel-migration-helper'],
                 ['php', 'artisan', 'vendor:publish', '--tag=laravel-migration-helper-migrations'],
             ],
-        ],
+        ],*/
         [
             'info' => 'Install IconAsync Vue component.',
             'commands' => [
